@@ -67,7 +67,7 @@ jobs:
       - name: Publish ${{ env.NPM_VERSION }}
         run: |
           echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> ./.npmrc
-          echo 'StefanPuia:registry=https://npm.pkg.github.com' >> ./.npmrc
+          echo '@StefanPuia:registry=https://npm.pkg.github.com' >> ./.npmrc
           npm publish --tag ${{ env.NPM_TAG }}
           git checkout -- .npmrc
         env:
