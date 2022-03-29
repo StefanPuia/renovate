@@ -323,7 +323,7 @@ export async function getPrList(refreshCache?: boolean): Promise<Pr[]> {
     };
     if (!config.ignorePrAuthor) {
       searchParams['role.1'] = 'AUTHOR';
-      searchParams['username.1'] = config.username;
+      searchParams['username.1'] = `~${config.username}`;
     }
     const query = getQueryString(searchParams);
     const values = await utils.accumulateValues(
